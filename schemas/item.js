@@ -1,11 +1,11 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "item",
+  title: "Item",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Article Title",
+      title: "Item Title",
       type: "string",
       validation: Rule => Rule.required().max(60)
     },
@@ -27,6 +27,13 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "collection",
+      title: "Collection",
+      type: "reference",
+      to: { type: "collection" },
+      validation: Rule => Rule.required()
+    },
+    {
       name: "publishedAt",
       title: "Publish Date",
       type: "datetime",
@@ -38,27 +45,53 @@ export default {
       type: "image",
       validation: Rule => Rule.required()
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}]
-    // },
     {
       name: "description",
-      title: "Article Description",
+      title: "Item Description",
       type: "text",
       validation: Rule => Rule.required().max(300)
     },
+    {
+      name: "price",
+      title: "Item Price (GBP)",
+      type: "number",
+      validation: Rule => Rule.required()
+    },
+    {
+      name: "quantity",
+      title: "Item Quantity",
+      type: "number",
+      validation: Rule => Rule.required()
+    },
+    {
+      name: "recurringType",
+      title: "Recurring Payment Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "None", value: "none" },
+          { title: "Day", value: "day" },
+          { title: "Week", value: "week" },
+          { title: "Month", value: "month" },
+          { title: "Year", value: "year" }
+        ],
+        layout: "radio"
+      },
+      validation: Rule => Rule.required()
+    },
+    {
+      name: "recurringInterval",
+      title: "Recurring Payment Interval",
+      type: "number",
+      validation: Rule => Rule.required()
+    }
   ],
 
   orderings: [
     {
-      title: 'Publish Date',
-      name: 'publishedAtDesc',
-      by: [
-        {field: 'publishedAt', direction: 'desc'}
-      ]
+      title: "Publish Date",
+      name: "publishedAtDesc",
+      by: [{ field: "publishedAt", direction: "desc" }]
     }
   ],
 
