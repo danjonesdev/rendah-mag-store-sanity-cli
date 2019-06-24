@@ -4,6 +4,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import category from './category'
 import collection from './collection'
 import item from './item'
+import productVariant from './productVariant'
 
 export default createSchema({
   name: 'default',
@@ -11,7 +12,8 @@ export default createSchema({
     [
       item,
       category,
-      collection
+      collection,
+      productVariant
     ]
   )
 })

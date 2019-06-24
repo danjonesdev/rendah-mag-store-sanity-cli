@@ -52,14 +52,19 @@ export default {
       validation: Rule => Rule.required().max(300)
     },
     {
-      name: "price",
-      title: "Item Price (GBP)",
-      type: "number",
-      validation: Rule => Rule.required()
+      title: 'Variants',
+      name: 'variants',
+      type: 'array',
+      of: [
+        {
+          title: 'Variant',
+          type: 'productVariant'
+        }
+      ]
     },
     {
-      name: "quantity",
-      title: "Item Quantity",
+      name: "price",
+      title: "Item Price (GBP)",
       type: "number",
       validation: Rule => Rule.required()
     },
