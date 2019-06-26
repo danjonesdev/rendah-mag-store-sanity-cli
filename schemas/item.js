@@ -74,11 +74,11 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "None", value: "none" },
-          { title: "Day", value: "day" },
-          { title: "Week", value: "week" },
-          { title: "Month", value: "month" },
-          { title: "Year", value: "year" }
+          { title: "None", value: "None" },
+          { title: "Day", value: "Day" },
+          { title: "Week", value: "Week" },
+          { title: "Month", value: "Month" },
+          { title: "Year", value: "Year" }
         ],
         layout: "radio"
       },
@@ -87,6 +87,7 @@ export default {
     {
       name: "recurringInterval",
       title: "Recurring Payment Interval",
+      description: "If no Recurring Payment Type, use '0'",
       type: "number",
       validation: Rule => Rule.required()
     }
@@ -106,11 +107,5 @@ export default {
       author: "author.name",
       media: "image"
     },
-    prepare(selection) {
-      const { author } = selection;
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`
-      });
-    }
   }
 };
