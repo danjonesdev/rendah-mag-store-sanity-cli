@@ -23,15 +23,13 @@ export default {
       name: "category",
       title: "Category",
       type: "reference",
-      to: { type: "category" },
-      validation: Rule => Rule.required()
+      to: { type: "category" }
     },
     {
       name: "collection",
       title: "Collection",
       type: "reference",
-      to: { type: "collection" },
-      validation: Rule => Rule.required()
+      to: { type: "collection" }
     },
     {
       name: "publishedAt",
@@ -52,13 +50,13 @@ export default {
       validation: Rule => Rule.required().max(300)
     },
     {
-      title: 'Variants',
-      name: 'variants',
-      type: 'array',
+      title: "Variants",
+      name: "variants",
+      type: "array",
       of: [
         {
-          title: 'Variant',
-          type: 'productVariant'
+          title: "Variant",
+          type: "productVariant"
         }
       ]
     },
@@ -106,6 +104,6 @@ export default {
       title: "title",
       author: "author.name",
       media: "image"
-    },
+    }
   }
 };
