@@ -67,6 +67,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "specialPrice",
+      title: "Special Price (GBP)",
+      description: "Will be used as the new price.",
+      type: "number"
+    },
+    {
       name: "recurringType",
       title: "Recurring Payment Type",
       type: "string",
