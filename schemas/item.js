@@ -40,16 +40,20 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: "image",
-      title: "Image",
+      name: "image1",
+      title: "Image 1",
       type: "image",
       validation: Rule => Rule.required()
     },
     {
+      name: "image2",
+      title: "Image 2",
+      type: "image",
+    },
+    {
       name: "description",
       title: "Item Description",
-      type: "text",
-      validation: Rule => Rule.required().max(300)
+      type: "blockContent",
     },
     {
       title: 'Variants',
@@ -67,6 +71,11 @@ export default {
       title: "Item Price (GBP)",
       type: "number",
       validation: Rule => Rule.required()
+    },
+    {
+      name: "specialPrice",
+      title: "Special Item Price (GBP)",
+      type: "number",
     },
     {
       name: "recurringType",

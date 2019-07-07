@@ -9,12 +9,13 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "One Size", value: "oneSize" },
-          { title: "X-Small", value: "xSmall" },
-          { title: "Small", value: "small" },
-          { title: "Medium", value: "medium" },
-          { title: "Large", value: "large" },
-          { title: "X-Large", value: "xLarge" }
+          { title: "One Size", value: "1-Size" },
+          { title: "X-Small", value: "XS" },
+          { title: "Small", value: "S" },
+          { title: "Medium", value: "M" },
+          { title: "Large", value: "L" },
+          { title: "X-Large", value: "XL" },
+          { title: "XX-Large", value: "XXL" },
         ],
       },
       validation: Rule => Rule.required()
