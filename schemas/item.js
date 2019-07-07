@@ -72,14 +72,9 @@ export default {
     },
     {
       name: "specialPrice",
-<<<<<<< HEAD
-      title: "Special Item Price (GBP)",
-      type: "number",
-=======
       title: "Special Price (GBP)",
       description: "Will be used as the new price.",
       type: "number"
->>>>>>> 73cd5e16b65f1a6c91c6c1b321127f934be4d40c
     },
     {
       name: "recurringType",
