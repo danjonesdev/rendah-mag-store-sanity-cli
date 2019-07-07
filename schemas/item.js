@@ -23,15 +23,13 @@ export default {
       name: "category",
       title: "Category",
       type: "reference",
-      to: { type: "category" },
-      validation: Rule => Rule.required()
+      to: { type: "category" }
     },
     {
       name: "collection",
       title: "Collection",
       type: "reference",
-      to: { type: "collection" },
-      validation: Rule => Rule.required()
+      to: { type: "collection" }
     },
     {
       name: "publishedAt",
@@ -56,13 +54,13 @@ export default {
       type: "blockContent",
     },
     {
-      title: 'Variants',
-      name: 'variants',
-      type: 'array',
+      title: "Variants",
+      name: "variants",
+      type: "array",
       of: [
         {
-          title: 'Variant',
-          type: 'productVariant'
+          title: "Variant",
+          type: "productVariant"
         }
       ]
     },
@@ -74,8 +72,14 @@ export default {
     },
     {
       name: "specialPrice",
+<<<<<<< HEAD
       title: "Special Item Price (GBP)",
       type: "number",
+=======
+      title: "Special Price (GBP)",
+      description: "Will be used as the new price.",
+      type: "number"
+>>>>>>> 73cd5e16b65f1a6c91c6c1b321127f934be4d40c
     },
     {
       name: "recurringType",
@@ -83,11 +87,11 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "None", value: "none" },
-          { title: "Day", value: "day" },
-          { title: "Week", value: "week" },
-          { title: "Month", value: "month" },
-          { title: "Year", value: "year" }
+          { title: "None", value: "None" },
+          { title: "Day", value: "Day" },
+          { title: "Week", value: "Week" },
+          { title: "Month", value: "Month" },
+          { title: "Year", value: "Year" }
         ],
         layout: "radio"
       },
@@ -96,6 +100,7 @@ export default {
     {
       name: "recurringInterval",
       title: "Recurring Payment Interval",
+      description: "If no Recurring Payment Type, use '0'",
       type: "number",
       validation: Rule => Rule.required()
     }
@@ -114,12 +119,6 @@ export default {
       title: "title",
       author: "author.name",
       media: "image"
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`
-      });
     }
   }
 };

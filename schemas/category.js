@@ -23,7 +23,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'text',
-      validation: Rule => Rule.required().min(50).max(300)
+      validation: Rule => Rule.max(300)
     }
   ]
 }
