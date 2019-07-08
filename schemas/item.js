@@ -46,12 +46,12 @@ export default {
     {
       name: "image2",
       title: "Image 2",
-      type: "image",
+      type: "image"
     },
     {
       name: "description",
       title: "Item Description",
-      type: "blockContent",
+      type: "blockContent"
     },
     {
       title: "Variants",
@@ -112,8 +112,7 @@ export default {
   preview: {
     select: {
       title: "title",
-      author: "author.name",
-      media: "image"
+      media: "image1"
     }
   }
 };
