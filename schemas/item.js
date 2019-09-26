@@ -65,6 +65,12 @@ export default {
       ]
     },
     {
+      name: "weight",
+      title: "Item Weight (g)",
+      type: "number",
+      validation: Rule => Rule.required()
+    },
+    {
       name: "price",
       title: "Item Price (GBP)",
       type: "number",
