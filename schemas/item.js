@@ -83,6 +83,21 @@ export default {
       type: "number"
     },
     {
+      name: "tag",
+      title: "Tag",
+      type: "string",
+      options: {
+        list: [
+          { title: "None", value: "None" },
+          { title: "Sale", value: "Sale" },
+          { title: "Pre-order", value: "Pre-order" },
+          { title: "Sold-out", value: "Sold-out" }
+        ],
+        layout: "radio"
+      },
+      validation: Rule => Rule.required()
+    },
+    {
       name: "recurringType",
       title: "Recurring Payment Type",
       type: "string",
